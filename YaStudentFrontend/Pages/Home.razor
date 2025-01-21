@@ -1,0 +1,38 @@
+﻿@page "/"
+@using YaStudentFrontend.Models
+@using YaStudentFrontend.Services
+@inject StudentService studentService
+
+<h3 class="text-center my-4">Listing Students</h3>
+
+@if (students == null)
+{
+        <p class="text-center"><em>Loading...</em></p>
+}
+else if (students.Count == 0)
+{
+        <p class="text-center">No students found.</p>
+}
+else
+{
+        <div class="container">
+            <div class="students-list">
+            @foreach (var (student, index) in students.Select((student, index) => (student, index)))
+            {
+                        <div class="student-row @((index % 2 == 0) ? "even" : "odd")">
+                            <span>@student.FirstName @student.LastName</span>
+                            <span><a href="mailto:@student.Email">@student.Email</a></span>
+                        </div>
+            }
+            </div>
+        </div>
+}
+
+@code {
+    private List<Student> students;
+
+    protected override async Task OnInitializedAsync()
+    {
+        students = await studentService.GetAllStudentsAsync();
+    }
+}
