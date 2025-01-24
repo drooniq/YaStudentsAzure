@@ -12,7 +12,7 @@ namespace YaStudentFrontend
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://yastudents-api-app.ashyglacier-4533aebf.swedencentral.azurecontainerapps.io") });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://yastudents-api-app--yastudents-api-app.ashyglacier-4533aebf.swedencentral.azurecontainerapps.io") });
             builder.Services.AddScoped<StudentService>();
 
             await builder.Build().RunAsync();
