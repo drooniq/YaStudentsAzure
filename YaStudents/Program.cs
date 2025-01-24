@@ -34,7 +34,7 @@ namespace YaStudents
             builder.Services.AddOpenApi();
 
             // Fetch the connection string from the environment variables
-            var connectionString = Environment.GetEnvironmentVariable("DefaultConnection");
+            var connectionString = Environment.GetEnvironmentVariable("defaultconnection");
 
             // Log and handle error if connection string is missing
             if (string.IsNullOrEmpty(connectionString))

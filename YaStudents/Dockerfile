@@ -33,8 +33,6 @@ RUN apk add --no-cache icu-libs icu-data-full bash
 # Set environment variable to disable invariant mode and enable full globalization support
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
-ENV DefaultConnection="Server=tcp:yastudentsdb.database.windows.net,1433;Initial Catalog=YAStudentsDB;Persist Security Info=False;User ID=isotope;Password=G4Q43ug2PLmZdV;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-
 # Set the working directory
 WORKDIR /app
 
